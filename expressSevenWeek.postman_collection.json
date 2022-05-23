@@ -1,12 +1,13 @@
 {
 	"info": {
 		"_postman_id": "cf3b10e3-500c-4550-9e66-50cb10593329",
-		"name": "expressSixWeek",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"name": "expressSevenWeek",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19683275"
 	},
 	"item": [
 		{
-			"name": "express Jwt get",
+			"name": "express imgur get",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -23,21 +24,16 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/posts",
-					"protocol": "http",
+					"raw": "{{URL}}posts",
 					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"posts"
+						"{{URL}}posts"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "express Jwt post",
+			"name": "express imgur post",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -51,21 +47,16 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/posts",
-					"protocol": "http",
+					"raw": "{{URL}}posts",
 					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"posts"
+						"{{URL}}posts"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "express Jwt patch",
+			"name": "express imgur patch",
 			"request": {
 				"method": "PATCH",
 				"header": [],
@@ -79,14 +70,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/posts/6280fa79c50939931ab60cba",
-					"protocol": "http",
+					"raw": "{{URL}}posts/6280fa79c50939931ab60cba",
 					"host": [
-						"localhost"
+						"{{URL}}posts"
 					],
-					"port": "3000",
 					"path": [
-						"posts",
 						"6280fa79c50939931ab60cba"
 					]
 				}
@@ -94,7 +82,7 @@
 			"response": []
 		},
 		{
-			"name": "express Jwt deleteAll",
+			"name": "express imgur deleteAll",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -108,21 +96,16 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/posts",
-					"protocol": "http",
+					"raw": "{{URL}}posts",
 					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"posts"
+						"{{URL}}posts"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "express Jwt delete",
+			"name": "express imgur delete",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -136,14 +119,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/posts/deletone/",
-					"protocol": "http",
+					"raw": "{{URL}}posts/deletone/",
 					"host": [
-						"localhost"
+						"{{URL}}posts"
 					],
-					"port": "3000",
 					"path": [
-						"posts",
 						"deletone",
 						""
 					]
@@ -152,7 +132,7 @@
 			"response": []
 		},
 		{
-			"name": "express Jwt sign_up",
+			"name": "express imgur sign_up",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -166,14 +146,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/users/sign_up",
-					"protocol": "http",
+					"raw": "{{URL}}users/sign_up",
 					"host": [
-						"localhost"
+						"{{URL}}users"
 					],
-					"port": "3000",
 					"path": [
-						"users",
 						"sign_up"
 					]
 				}
@@ -181,7 +158,7 @@
 			"response": []
 		},
 		{
-			"name": "express Jwt sign_in",
+			"name": "express imgur sign_in",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -195,14 +172,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/users/sign_in",
-					"protocol": "http",
+					"raw": "{{URL}}users/sign_in",
 					"host": [
-						"localhost"
+						"{{URL}}users"
 					],
-					"port": "3000",
 					"path": [
-						"users",
 						"sign_in"
 					]
 				}
@@ -210,7 +184,7 @@
 			"response": []
 		},
 		{
-			"name": "express Jwt updatePassword",
+			"name": "express imgur updatePassword",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -233,14 +207,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/users/user/62862ec031d6d40cba12b87d/updatePassword",
-					"protocol": "http",
+					"raw": "{{URL}}users/user/62862ec031d6d40cba12b87d/updatePassword",
 					"host": [
-						"localhost"
+						"{{URL}}users"
 					],
-					"port": "3000",
 					"path": [
-						"users",
 						"user",
 						"62862ec031d6d40cba12b87d",
 						"updatePassword"
@@ -250,25 +221,22 @@
 			"response": []
 		},
 		{
-			"name": "express Jwt getUsers",
+			"name": "express imgur getUsers",
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1Mjk2MzE2MCwiZXhwIjoxNjUzMDQ5NTYwfQ.SFHZcfOUGmt74W675IiwwwBFQH4qOMOXdZbi3lT5t8Y",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1MzI2ODM1NCwiZXhwIjoxNjU1ODYwMzU0fQ.x4I_6C9w2wN2OfWvcAEi_rGazeLSIjjoiLqnNr_HXfQ",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3000/users/user",
-					"protocol": "http",
+					"raw": "{{URL}}users/user",
 					"host": [
-						"localhost"
+						"{{URL}}users"
 					],
-					"port": "3000",
 					"path": [
-						"users",
 						"user"
 					]
 				}
@@ -276,7 +244,7 @@
 			"response": []
 		},
 		{
-			"name": "express Jwt editUser",
+			"name": "express imgur editUser",
 			"request": {
 				"method": "PATCH",
 				"header": [
@@ -296,17 +264,38 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/users/user/62862ec031d6d40cba12b87d/edit",
-					"protocol": "http",
+					"raw": "{{URL}}users/user/62862ec031d6d40cba12b87d/edit",
 					"host": [
-						"localhost"
+						"{{URL}}users"
 					],
-					"port": "3000",
 					"path": [
-						"users",
 						"user",
 						"62862ec031d6d40cba12b87d",
 						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express imgur post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "\n",
+							"type": "file",
+							"src": "/C:/Users/akidyfee/Desktop/123.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}upload",
+					"host": [
+						"{{URL}}upload"
 					]
 				}
 			},
