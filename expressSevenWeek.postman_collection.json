@@ -222,6 +222,9 @@
 		},
 		{
 			"name": "express imgur getUsers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [
@@ -231,6 +234,15 @@
 						"type": "text"
 					}
 				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "{{URL}}users/user",
 					"host": [
@@ -278,10 +290,17 @@
 			"response": []
 		},
 		{
-			"name": "express imgur post",
+			"name": "express imgur post img",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1MzI2ODM1NCwiZXhwIjoxNjU1ODYwMzU0fQ.x4I_6C9w2wN2OfWvcAEi_rGazeLSIjjoiLqnNr_HXfQ",
+						"type": "text",
+						"disabled": true
+					}
+				],
 				"body": {
 					"mode": "formdata",
 					"formdata": [
