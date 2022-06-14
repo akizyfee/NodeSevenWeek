@@ -26,6 +26,24 @@ const userSchema = new mongoose.Schema(
             default: 'male',
             enum: ['male', 'female'],
         },
+        followers: [
+            {
+                user: { type: mongoose.Schema.ObjectId, ref: 'user' },
+                createdAt: {
+                    type: Date,
+                    default: Date.now,
+                },
+            },
+        ],
+        following: [
+            {
+                user: { type: mongoose.Schema.ObjectId, ref: 'user' },
+                createdAt: {
+                    type: Date,
+                    default: Date.now,
+                },
+            },
+        ],
     },
     { versionKey: false }
 );

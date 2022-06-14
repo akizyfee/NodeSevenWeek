@@ -19,15 +19,26 @@ const postSchema = new mongoose.Schema(
             ref: "user",//連結到user集合
             required: [true, '貼文姓名未填寫']
         },
-        likes: {
-            type: Number,
-            default: 0
-        }
+        likes: [
+            {
+                type: mongoose.Schema.ObjectId,
+                ref: "user"
+            }
+        ]
     },
     {
         versionKey: false,
+        toJSON: { virtuals: true },
+        toObject: { virtuals: true },
     }
 );
+
+postSchema.virtual('comments', {
+    ref: 'Comment',
+    foreignField: 'post',
+    localField: '_id',
+});
+
 const Post = mongoose.model('Post', postSchema);
 
 module.exports = Post;

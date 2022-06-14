@@ -106,6 +106,60 @@ const users = {
             generateSendJWT(user, 200, res);
         }
     }),
+    follow: handleErrorAsync(async (req, res, next) => {
+        if (req.params.id === req.user.id) {
+            return next(appError(400, '不可以追蹤自己', next));
+        }
+        await User.updateOne(
+            {
+                _id: req.user.id,
+                'following.user': { $ne: req.params.id },
+            },
+            {
+                $addToSet: { following: { user: req.params.id } },
+            }
+        );
+        await User.updateOne(
+            {
+                _id: req.params.id,
+                'followers.user': { $ne: req.user.id },
+            },
+            {
+                $addToSet: { followers: { user: req.user.id } },
+            }
+        );
+        handleSuccess(res, '成功追蹤~', 200);
+    }),
+    unfollow: handleErrorAsync(async (req, res, next) => {
+        if (req.params.id === req.user.id) {
+            return next(appError(405, '不可以追蹤自己', next));
+        }
+        await User.updateOne(
+            {
+                _id: req.user.id,
+            },
+            {
+                $pull: { following: { user: req.params.id } },
+            }
+        );
+        await User.updateOne(
+            {
+                _id: req.params.id,
+            },
+            {
+                $pull: { followers: { user: req.user.id } },
+            }
+        );
+        handleSuccess(res, '成功取消追蹤~', 200);
+    }),
+    getFollowing: handleErrorAsync(async (req, res, next) => {
+        const followUserId = req.user.id;
+        const followingList = await User.findById(followUserId).populate({
+            path: 'following.user',
+            select: 'name',
+        });
+        handleSuccess(res, '取得追蹤列表', followingList);
+    }),
 };
 
 module.exports = users;

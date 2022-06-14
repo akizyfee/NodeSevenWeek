@@ -15,4 +15,9 @@ router.post(
     isAuth,
     UsersControllers.updatePassword
 );
+router.post('/user/:id/follow', isAuth, UsersControllers.follow);
+router.delete('/user/:id/unfollow', isAuth, UsersControllers.unfollow);
+router.get('/user/following', isAuth, UsersControllers.getFollowing);
+
+
 module.exports = router;

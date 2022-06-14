@@ -1,13 +1,13 @@
 {
 	"info": {
 		"_postman_id": "cf3b10e3-500c-4550-9e66-50cb10593329",
-		"name": "expressSevenWeek",
+		"name": "express mataWall",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "19683275"
 	},
 	"item": [
 		{
-			"name": "express imgur get",
+			"name": "express get貼文",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -33,7 +33,7 @@
 			"response": []
 		},
 		{
-			"name": "express imgur post",
+			"name": "express 發文",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -56,7 +56,7 @@
 			"response": []
 		},
 		{
-			"name": "express imgur patch",
+			"name": "express 編輯貼文",
 			"request": {
 				"method": "PATCH",
 				"header": [],
@@ -82,7 +82,7 @@
 			"response": []
 		},
 		{
-			"name": "express imgur deleteAll",
+			"name": "express 刪除全部貼文",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -105,7 +105,7 @@
 			"response": []
 		},
 		{
-			"name": "express imgur delete",
+			"name": "express 刪除一筆貼文",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -132,7 +132,7 @@
 			"response": []
 		},
 		{
-			"name": "express imgur sign_up",
+			"name": "express 註冊",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -158,7 +158,7 @@
 			"response": []
 		},
 		{
-			"name": "express imgur sign_in",
+			"name": "express 登入",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -184,7 +184,7 @@
 			"response": []
 		},
 		{
-			"name": "express imgur updatePassword",
+			"name": "express 改密碼",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -221,7 +221,7 @@
 			"response": []
 		},
 		{
-			"name": "express imgur getUsers",
+			"name": "express 獲得個人資訊",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -256,13 +256,13 @@
 			"response": []
 		},
 		{
-			"name": "express imgur editUser",
+			"name": "express 修改個人資訊",
 			"request": {
 				"method": "PATCH",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1Mjk2MTk4MiwiZXhwIjoxNjUzMDQ4MzgyfQ.ThDczDSs1VrSxEHthds588nFGxtIxO3UkX09DQNjAmw",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTIxMDgyNSwiZXhwIjoxNjU3ODAyODI1fQ._1ubjPD2HaCSeINA8UcAbnFAcbstBn6sXqcgCN_ei28",
 						"type": "text"
 					}
 				],
@@ -290,7 +290,7 @@
 			"response": []
 		},
 		{
-			"name": "express imgur post img",
+			"name": "express 上傳圖片",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -315,6 +315,179 @@
 					"raw": "{{URL}}upload",
 					"host": [
 						"{{URL}}upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 按讚",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTIxMDgyNSwiZXhwIjoxNjU3ODAyODI1fQ._1ubjPD2HaCSeINA8UcAbnFAcbstBn6sXqcgCN_ei28",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}posts/62a88089772f5c0eea5ed56e/like",
+					"host": [
+						"{{URL}}posts"
+					],
+					"path": [
+						"62a88089772f5c0eea5ed56e",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 移除讚",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTIxMDgyNSwiZXhwIjoxNjU3ODAyODI1fQ._1ubjPD2HaCSeINA8UcAbnFAcbstBn6sXqcgCN_ei28",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}posts/62a88089772f5c0eea5ed56e/unlike",
+					"host": [
+						"{{URL}}posts"
+					],
+					"path": [
+						"62a88089772f5c0eea5ed56e",
+						"unlike"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 新增留言",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTIxMDgyNSwiZXhwIjoxNjU3ODAyODI1fQ._1ubjPD2HaCSeINA8UcAbnFAcbstBn6sXqcgCN_ei28",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"comment\":\"天氣變好了\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}posts/62a88ef6407c299793ddf595/comment",
+					"host": [
+						"{{URL}}posts"
+					],
+					"path": [
+						"62a88ef6407c299793ddf595",
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 追蹤",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTIxMDgyNSwiZXhwIjoxNjU3ODAyODI1fQ._1ubjPD2HaCSeINA8UcAbnFAcbstBn6sXqcgCN_ei28",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}users/user/62862ec031d6d40cba12b87d/follow",
+					"host": [
+						"{{URL}}users"
+					],
+					"path": [
+						"user",
+						"62862ec031d6d40cba12b87d",
+						"follow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 取消追蹤",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTIxMDgyNSwiZXhwIjoxNjU3ODAyODI1fQ._1ubjPD2HaCSeINA8UcAbnFAcbstBn6sXqcgCN_ei28",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}users/user/62862ec031d6d40cba12b87d/unfollow",
+					"host": [
+						"{{URL}}users"
+					],
+					"path": [
+						"user",
+						"62862ec031d6d40cba12b87d",
+						"unfollow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "express 取得追蹤列表",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODYyZWMwMzFkNmQ0MGNiYTEyYjg3ZCIsImlhdCI6MTY1NTIxMDgyNSwiZXhwIjoxNjU3ODAyODI1fQ._1ubjPD2HaCSeINA8UcAbnFAcbstBn6sXqcgCN_ei28",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}users/user/following",
+					"host": [
+						"{{URL}}users"
+					],
+					"path": [
+						"user",
+						"following"
 					]
 				}
 			},
